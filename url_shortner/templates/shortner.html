@@ -1,0 +1,18 @@
+{%extends "home.html"%}
+{% block title%}url shortner{%endblock%}
+{%block content%}
+<h2>url shortner</h2>
+<form method="post" action="{%url "shortner"%}">
+    {%csrf_token%}
+    <label for="url">long link</label>
+    <input type="url" name="url" id="url">
+    <br>
+    <button type="submit">short</button>
+</form>
+<label for="result">result</label>
+<input type="text" readonly value="{{result}}" id="result">
+<br>
+<button onclick="Copy()">copy</button>
+<br>
+<button onclick="openURL()">open link</button>
+{%endblock%}
